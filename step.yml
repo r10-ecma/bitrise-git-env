@@ -64,7 +64,17 @@ toolkit:
 
 
 inputs:
-  
+  - USE_LS_REMOTE:
+    opts:
+      title: Use ls-remote to get commit hash
+      summary:
+      description:
+      value_options:
+        - "true"
+        - "false"
+      value: "true"
+      is_expand: true
+      is_required: true
 outputs:
   - R_GIT_COMMIT_MESSAGE_SUBJECT:
     opts:
@@ -94,5 +104,10 @@ outputs:
   - R_GIT_COMMIT_COMMITTER_EMAIL:
     opts:
       title: "Git commit committer email."
+      summary: 
+      description: 
+  - BITRISE_GIT_COMMIT:
+    opts:
+      title: "If USE_LS_REMOTE is true, BITRISE_GIT_COMMIT will be filled with the commit ID of the branch/tag that triggered the build."
       summary: 
       description: 
